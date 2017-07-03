@@ -1,3 +1,8 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Represents table with characters.
+ */
 
 import * as React from 'react';
 

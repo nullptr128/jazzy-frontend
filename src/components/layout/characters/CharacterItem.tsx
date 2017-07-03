@@ -1,3 +1,9 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Component representing a character that we are 
+ * not currently editing.
+ */
 
 import * as React from 'react';
 import { Character } from '../../../support/types';
@@ -11,6 +17,9 @@ interface CharacterItemProps {
 
 export default class CharacterItem extends React.Component<CharacterItemProps,{}> {
 
+    /**
+     * Prepare avatar part
+     */
     public getAvatarElement(): JSX.Element {
         return (
             <div className="character-item-avatar">
@@ -19,6 +28,9 @@ export default class CharacterItem extends React.Component<CharacterItemProps,{}
         );
     }
 
+    /**
+     * Prepare name/age part
+     */
     public getDescriptionElement(): JSX.Element {
         return (
             <div className="character-item-description">
@@ -32,6 +44,9 @@ export default class CharacterItem extends React.Component<CharacterItemProps,{}
         );
     }
 
+    /**
+     * Prepare strength part, with number and gauge.
+     */
     public getStrengthElement(): JSX.Element {
         return (
             <div className="character-item-strength">

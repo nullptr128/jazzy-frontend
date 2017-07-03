@@ -1,3 +1,8 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Simple component that indicates progress.
+ */
 
 import * as React from 'react';
 
@@ -6,6 +11,10 @@ interface GaugeProps {
     total: number;
 }
 
+/**
+ * Returns CSS-friendly width based on value/total fields.
+ * @param props props with value and total amounts
+ */
 function getGaugeWidthStyle( props: GaugeProps ): string {
     const widthPercent: number = Math.max( 0 , ( props.value / props.total ) * 100 );
     return `${widthPercent}%`;

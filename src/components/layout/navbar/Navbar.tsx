@@ -1,3 +1,8 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Navbar component.
+ */
 
 import * as React from 'react';
 import Brand from './Brand';
@@ -7,12 +12,13 @@ import UserWidget from '../../widget/UserWidget';
 import { CharacterType } from '../../../support/types';
 
 interface NavbarProps {
-    characterType: CharacterType;
-    onChangeCharacterType: (newType: CharacterType) => void;
+    characterType: CharacterType; // type of character currently selected
+    onChangeCharacterType: (newType: CharacterType) => void; // fires when user changes tab
 }
 
 export default class Navbar extends React.Component<NavbarProps> {
 
+    // tabs are defined satically for now
     private items = [
         { key: 'gnomes' , name: 'Gnomes' } ,
         { key: 'trolls' , name: 'Trolls' } ,
@@ -41,10 +47,18 @@ export default class Navbar extends React.Component<NavbarProps> {
         );
     }
 
+    /**
+     * Notifies parent component that we have changed
+     * current tab.
+     * @param newValue newly choosen character type
+     */
     public actionChangeTab( newValue: string ): void {
         this.props.onChangeCharacterType( newValue as CharacterType );
     }
 
+    /**
+     * Handles clicking on Create Monster button.
+     */
     public actionCreateMonster(): void {
         window.alert( 'createMonster' );
     }

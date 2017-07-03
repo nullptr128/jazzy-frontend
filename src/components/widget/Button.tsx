@@ -1,3 +1,8 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Simple button component.
+ */
 
 import * as React from 'react';
 

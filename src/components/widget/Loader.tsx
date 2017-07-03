@@ -1,9 +1,15 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Circular loading indicator. SVG files comes from
+ * https://loading.io/
+ */
 
 import * as React from 'react';
 
 interface LoaderProps {
     isVisible: boolean;
-    type?: string;
+    type?: 'small' | null;
 }
 
 const Loader: React.SFC<LoaderProps> = (props) => {

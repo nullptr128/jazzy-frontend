@@ -13,6 +13,8 @@ import App from 'components/App';
 
 window.addEventListener( 'load' , () => {
 
+    // we will find html element with id #root and place react
+    // app there.
     const appElement: HTMLElement = document.getElementById( 'root' );
 
     if ( appElement ) {

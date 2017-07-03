@@ -1,3 +1,8 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Basic input component.
+ */
 
 import * as React from 'react';
 

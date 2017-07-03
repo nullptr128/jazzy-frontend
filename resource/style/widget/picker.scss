@@ -1,3 +1,8 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Styles for (tab) picker component.
+ */
 
 .picker {
     font-size: 1.0em;
@@ -10,6 +15,8 @@
             width: 110px;
             text-align: center;
             cursor: pointer;
+            // every picker item has underline,
+            // its set to transparent default
             &:after {
                 position: absolute;
                 display: block;
@@ -21,6 +28,8 @@
                 background-color: transparent;
                 transition: 100ms linear background-color;
             }
+            // active tab item underline turns
+            // to purple
             &.active:after {
                 background-color: $purple;
             }

@@ -1,3 +1,8 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * This component allows user to pick one from several tab-like buttons.
+ */
 
 import * as React from 'react';
 

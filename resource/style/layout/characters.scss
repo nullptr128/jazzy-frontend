@@ -1,17 +1,28 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Styles for Characters component and its subcomponents.
+ */
 
+// Characters component
 .characters {
     margin-top: 25px;
+    // table header
     h4 {
         font-size: 1.4em;
     }
+    // container for table with characters
     .characters-table {
         margin-top: 10px;
     }
+    // container for "load more" button
     .characters-button {
         text-align: center;
         padding: 25px;
         padding-top: 100px;
     }
+    // container for big red message
+    // when GET request fails
     .characters-error {
         padding-top: 100px;
         padding-bottom: 100px;
@@ -20,34 +31,44 @@
     }
 }
 
+// CharacterItem component
 .character-item {
     display: flex;
     align-items: center;
     padding: 20px;
     cursor: pointer;
+    // bottom border for all items but last
     &:not(:last-child) {
         border-bottom: 1px solid $table-separator;
     }
+    // table row hover style for increased user experience
     &:hover {
         background-color: darken( white , 7 );
     }
+    //
+    // character avatar container
     .character-item-avatar {
         margin-right: 25px;
     }
+    // character description (name,age) block
     .character-item-description {
+        // character name
         .character-item-name {
             font-weight: bold;
             font-size: 0.95em;
         }
+        // character age
         .character-item-age {
             font-size: 0.8em;
         }
     }
+    // character strength box container
     .character-item-strength {
         display: flex;
         align-items: center;
         margin-left: auto;
         font-size: 0.8em;
+        // strength bar container
         .character-item-strength-bar {
             width: 220px;
             max-width: 15vw;
@@ -62,8 +83,9 @@
             margin-left: 20px;
         }
     }
-    //
+    // styles for CharacterEditableItem component
     &.editing {
+        // single form group consisting of label+input
         .character-item-edit-group {
             width: 250px;
             max-width: 20vw;
@@ -82,11 +104,13 @@
                 width: 100%;
             }
         }
+        // container for save button
         .character-item-save {
             margin-left: auto;
             margin-right: 50px;
         }
     }
+    // styles for CharacterEditableItem when in "saving" state
     &.saving {
         text-align: center;
         .character-item-saving-text {

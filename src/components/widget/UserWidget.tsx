@@ -1,3 +1,9 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * This component repesents logged user block, used in top-right
+ * corner. It shows currently logged user, its name and role.
+ */
 
 import * as React from 'react';
 import Avatar from './Avatar';

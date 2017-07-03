@@ -1,6 +1,13 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Basic stylesheet.
+ */
 
+// import Work Sans font from google api
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
+// import all other scss files
 @import "common/colors.scss";
 @import "layout/app.scss";
 @import "layout/navbar.scss";
@@ -13,10 +20,13 @@
 @import "widget/text-input.scss";
 @import "widget/user-widget.scss";
 
+// override padding-box for all elements
+// because noone really likes padding-box
 * {
     box-sizing: border-box;
 }   
 
+// basic body style
 body {
     background-color: white;
     padding: 0;

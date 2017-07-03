@@ -1,3 +1,9 @@
+/**
+ * Jazzy-Frontend
+ * 
+ * Component representing circular avatar with user-defined
+ * image inside.
+ */
 
 import * as React from 'react';
 
