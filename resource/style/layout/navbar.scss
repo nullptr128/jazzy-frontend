@@ -1,0 +1,20 @@
+
+.navbar {
+    display: flex;
+    padding: 10px;
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+    .navbar-picker {
+        padding-left: 10vw;
+    }
+    .navbar-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        .navbar-create-monster {
+            margin-right: 45px;
+        }
+    }
+}

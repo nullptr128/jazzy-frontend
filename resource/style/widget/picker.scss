@@ -1,0 +1,29 @@
+
+.picker {
+    font-size: 1.0em;
+    ul.picker-items {
+        display: flex;
+        li.picker-item {
+            position: relative;
+            padding: 10px;
+            padding-bottom: 15px;
+            width: 110px;
+            text-align: center;
+            cursor: pointer;
+            &:after {
+                position: absolute;
+                display: block;
+                content: "";
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 5px;
+                background-color: transparent;
+                transition: 100ms linear background-color;
+            }
+            &.active:after {
+                background-color: $purple;
+            }
+        }
+    }
+}

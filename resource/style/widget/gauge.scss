@@ -1,0 +1,16 @@
+
+.gauge {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    .gauge-inner {
+        height: 10px;
+        border-radius: 5px;
+    }
+    &.gauge-purple {
+        background-color: transparentize( $purple , 0.75 );
+        .gauge-inner {
+            background-color: $purple;
+        }
+    }
+}

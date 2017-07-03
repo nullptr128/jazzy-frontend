@@ -1,0 +1,53 @@
+
+.characters {
+    margin-top: 25px;
+    h4 {
+        font-size: 1.4em;
+    }
+    .characters-table {
+        margin-top: 10px;
+    }
+    .characters-button {
+        text-align: center;
+        padding: 25px;
+        padding-top: 100px;
+    }
+}
+
+.character-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    &:not(:last-child) {
+        border-bottom: 1px solid $table-separator;
+    }
+    .character-item-description {
+        margin-left: 25px;
+        .character-item-name {
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+        .character-item-age {
+            font-size: 0.8em;
+        }
+    }
+    .character-item-strength {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        font-size: 0.8em;
+        .character-item-strength-bar {
+            width: 220px;
+            max-width: 15vw;
+            margin-right: 25px;
+        }
+        .character-item-strength-value {
+            width: 55px;
+        }
+        .character-item-strength-label {
+            width: 65px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+    }
+}

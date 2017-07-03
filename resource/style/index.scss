@@ -1,8 +1,23 @@
 
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+@import "common/colors.scss";
+@import "layout/app.scss";
+@import "layout/navbar.scss";
+@import "layout/characters.scss";
+@import "widget/avatar.scss";
+@import "widget/button.scss";
+@import "widget/gauge.scss";
+@import "widget/loader.scss";
+@import "widget/picker.scss";
+@import "widget/user-widget.scss";
+
 * {
     box-sizing: border-box;
 }   
 
 body {
-    background-color: red;
+    background-color: white;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
 }
