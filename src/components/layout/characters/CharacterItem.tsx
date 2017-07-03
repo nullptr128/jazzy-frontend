@@ -6,6 +6,7 @@ import Gauge from '../../widget/Gauge';
 
 interface CharacterItemProps {
     character: Character;
+    onEditItem: () => void;
 }
 
 export default class CharacterItem extends React.Component<CharacterItemProps,{}> {
@@ -49,7 +50,7 @@ export default class CharacterItem extends React.Component<CharacterItemProps,{}
 
     public render(): JSX.Element {
         return (
-            <li className="character-item">
+            <li className="character-item" onClick={ () => this.props.onEditItem() }>
                 { this.getAvatarElement() }
                 { this.getDescriptionElement() }
                 { this.getStrengthElement() }

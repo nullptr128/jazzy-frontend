@@ -11,6 +11,8 @@ interface AppState {
     page: number;
     isLoading: boolean;
     isError: boolean;
+    isSaving: boolean;
+    editingItem: Character | null;
 }
 
 const CHARACTERS_ON_PAGE        = 20;
@@ -23,6 +25,8 @@ export default class App extends React.Component<{},AppState> {
         page: 1 ,
         isLoading: false ,
         isError: false ,
+        isSaving: false ,
+        editingItem: null ,
     };
 
     public componentWillMount(): void {
@@ -38,8 +42,13 @@ export default class App extends React.Component<{},AppState> {
                 
                 <Characters type={ this.state.characterType }
                     items={ this.state.characters } 
+                    isLoading={ this.state.isLoading }
+                    isError={ this.state.isError }
+                    isSaving={ this.state.isSaving }
+                    editingItem={ this.state.editingItem }
                     onLoadMore={ () => this.actionLoadMore() }
-                    isLoading={ this.state.isLoading }/>
+                    onEditItem={ (item) => this.actionEditItem(item) }
+                    onEditedItem={ (item) => this.actionEditedItem(item) }/>
 
             </div>
         );
@@ -56,6 +65,7 @@ export default class App extends React.Component<{},AppState> {
             characters: [] ,
             page: 1 ,
             isLoading: true ,
+            editingItem: null ,
         } );
 
         try {
@@ -114,6 +124,56 @@ export default class App extends React.Component<{},AppState> {
                 isError: true ,
             } );
 
+        }
+
+    }
+
+    public actionEditItem( item: Character ): void {
+
+        if ( this.state.editingItem !== null ) {
+            return;
+        }
+
+        this.setState( {
+            editingItem: item ,
+        } );
+
+    }
+
+    public async actionEditedItem( updateData: Character ): Promise<void> {
+
+        try {
+
+            this.setState( { isSaving: true } );
+
+            const characterId: number = this.state.editingItem.id;
+
+            const result = await CharactersService.updateCharacterOfType(
+                this.state.characterType , characterId , updateData
+            );
+
+            this.setState( prevState => {
+                
+                const newState = {...prevState};
+                
+                newState.isSaving = false;
+                newState.editingItem = null;
+                newState.characters.map( character => {
+                    if ( character.id == characterId ) {
+                        return result;
+                    } else {
+                        return character;
+                    }
+                } );
+
+                return newState;
+
+            } );
+
+        } catch ( err ) {
+            this.setState( { isSaving: false } );
+            window.alert( 'An error occured during saving. Please try again later.' );
+            throw new Error();
         }
 
     }

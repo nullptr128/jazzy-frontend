@@ -12,17 +12,29 @@
         padding: 25px;
         padding-top: 100px;
     }
+    .characters-error {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        text-align: center;
+        color: red;
+    }
 }
 
 .character-item {
     display: flex;
     align-items: center;
     padding: 20px;
+    cursor: pointer;
     &:not(:last-child) {
         border-bottom: 1px solid $table-separator;
     }
+    &:hover {
+        background-color: darken( white , 7 );
+    }
+    .character-item-avatar {
+        margin-right: 25px;
+    }
     .character-item-description {
-        margin-left: 25px;
         .character-item-name {
             font-weight: bold;
             font-size: 0.95em;
@@ -48,6 +60,38 @@
             width: 65px;
             font-weight: bold;
             margin-left: 20px;
+        }
+    }
+    //
+    &.editing {
+        .character-item-edit-group {
+            width: 250px;
+            max-width: 20vw;
+            padding: 5px;
+            margin-right: 10px;
+            display: block;
+            label {
+                display: block;
+                font-size: 0.75em;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+            }
+            input {
+                display: block;
+                width: 100%;
+            }
+        }
+        .character-item-save {
+            margin-left: auto;
+            margin-right: 50px;
+        }
+    }
+    &.saving {
+        text-align: center;
+        .character-item-saving-text {
+            margin-left: 25px;
+            color: $purple;
         }
     }
 }
