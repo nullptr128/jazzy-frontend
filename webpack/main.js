@@ -20,8 +20,8 @@ module.exports = {
 
     // output files
     output: {
-        path: __dirname + '/../dist/build' ,
-        filename: '[name].js' ,
+        path: __dirname + '/../dist' ,
+        filename: 'build/[name].js' ,
     } ,
 
     // module resolution
@@ -31,7 +31,7 @@ module.exports = {
             'src' ,
             'resource' ,
         ] ,
-        extensions: [ '.js' , '.ts' ] ,
+        extensions: [ '.js' , '.ts' , '.tsx' ] ,
     } ,
 
     // webpack loaders configuration
@@ -39,6 +39,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts$/ ,
+                exclude: /(node_modules)/ ,
+                loaders: [ 'awesome-typescript-loader?configFileName=./tsconfig.json' ] ,
+            } ,
+            {
+                test: /\.tsx$/ ,
                 exclude: /(node_modules)/ ,
                 loaders: [ 'awesome-typescript-loader?configFileName=./tsconfig.json' ] ,
             } ,
@@ -68,7 +73,7 @@ module.exports = {
         // performance and reduce build times
         new webpack.optimize.CommonsChunkPlugin( {
             name: 'vendor' ,
-            filename: 'vendor.js' ,
+            filename: 'build/vendor.js' ,
             minChunks( module , count ) {
                 var context = module.context;
                 return ( context && context.indexOf( 'node_modules' ) >= 0 );
