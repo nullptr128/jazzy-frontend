@@ -1,0 +1,31 @@
+{
+  "name": "jazzy-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/webpack/bin/webpack.js --config ./webpack/main.js",
+    "start": "node_modules/http-server/bin/http-server ./dist -c-1",
+    "test": "echo \"3572353205923052 tests passed, 0 tests failed!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nullptr128/jazzy-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nullptr128/jazzy-frontend/issues"
+  },
+  "homepage": "https://github.com/nullptr128/jazzy-frontend#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.1",
+    "css-loader": "^0.28.4",
+    "http-server": "^0.10.0",
+    "node-sass": "^4.5.3",
+    "reset-css": "^2.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.0.0"
+  }
+}

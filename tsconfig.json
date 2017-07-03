@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "declaration": false ,
+        "target": "es5" ,
+        "module": "commonjs" ,
+        "moduleResolution": "node" ,
+        "noImplicitAny": false ,
+        "noImplicitReturns": false ,
+        "noImplicitThis": false ,
+        "strictNullChecks": false ,
+        "allowSyntheticDefaultImports": true ,
+        "sourceMap": true ,
+        "baseUrl": "./src" ,
+        "experimentalDecorators": true ,
+        "emitDecoratorMetadata": true ,
+        "lib": [ "es6" , "dom" ]
+    } ,
+    "exlude": [
+        "node_modules",
+        "bin"
+    ] ,
+    "include": [
+        "./src/**/*.ts"
+    ]
+}
