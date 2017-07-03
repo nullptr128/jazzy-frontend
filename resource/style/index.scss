@@ -20,6 +20,10 @@
 @import "widget/text-input.scss";
 @import "widget/user-widget.scss";
 
+// import addtional rwd files
+@import "rwd/navbar.scss";
+@import "rwd/characters.scss";
+
 // override padding-box for all elements
 // because noone really likes padding-box
 * {

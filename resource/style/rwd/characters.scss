@@ -1,0 +1,59 @@
+
+//
+// for <= 800px we will reduce some paddings and
+// character avatar size
+//
+@media( max-width: 800px ) {
+    .characters .characters-table .characters-table-items .character-item {
+        padding: 10px;
+        .character-item-avatar {
+            margin-right: 10px;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+//
+// for <= 600px, we will turn form into top-down one instead
+//
+@media( max-width: 600px ) {
+    .characters .characters-table .characters-table-items .character-item.editing {
+        display: block;
+        // avatar is leaving this view for good
+        .character-item-avatar {
+            display: none;
+        }
+        // group is now 100% width
+        .character-item-edit-group {
+            width: 100%;
+            max-width: unset;
+        }
+        // save button is going slightly below and we 
+        // enlarge it a bit to make it better on 
+        // mobile devices.
+        .character-item-save {
+            padding-top: 10px;
+            margin: 0;
+            text-align: center;
+            button {
+                min-width: 125px;
+                padding: 10px;
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+// For <500px:
+// In character list, we are removing gauge as it does not yield
+// enough value for small screen.
+@media( max-width: 500px ) {
+    .characters .characters-table .characters-table-items .character-item {
+        .character-item-strength-bar {
+            display: none;
+        }
+    }
+}

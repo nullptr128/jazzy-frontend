@@ -1,0 +1,44 @@
+
+// 
+// for <= 750px, we are going to move picker tabs
+// below navbar to make up some space
+//
+@media( max-width: 750px ) {
+    .navbar {
+        // enable wrapping elements
+        flex-wrap: wrap;
+        .navbar-brand {
+            width: 20%; // brand will take 20% of space
+        }
+        .navbar-right {
+            width: 80%; // right section will take 80% of space
+            margin: 0; // disable margin-left:auto
+            justify-content: flex-end; // move elements to the right hand side
+        }
+        // no space is left for picker in first row, so we just swap order to last
+        // and it will move to second row
+        .navbar-picker {
+            width: 100vw;
+            order: 4;
+            padding: 15px 0 0 0;
+            // we also move picker element to center
+            text-align: center;
+            .picker {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+//
+// for <= 500px, we will reduce navbar brand image, leaving only 
+// circle.
+//
+@media( max-width: 500px ) {
+    .navbar {
+        .navbar-brand-image {
+            width: 36px;
+            overflow: hidden;
+        }
+    }
+}
