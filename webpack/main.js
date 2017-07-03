@@ -53,6 +53,14 @@ module.exports = {
         ] ,
     } ,
 
+    // dev server
+    devServer: {
+        contentBase: __dirname + '/../dist/' , 
+        hot: true ,
+        inline: true ,
+        port: 8080 ,
+    } ,
+
     plugins: [
 
         // we will move everything from node_modules into 
